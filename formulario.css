@@ -1,5 +1,6 @@
 .contacto {
     background-color: #f5f7fa;
+    padding: 4rem 0;
 }
 
 #formulario-contacto {
@@ -13,6 +14,7 @@
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .form-group label {
@@ -54,11 +56,13 @@
     border-radius: 4px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 600;
 }
 
 #formulario-contacto button:hover {
     background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 /* Validación de formulario */
@@ -70,7 +74,17 @@
 .incorrecto {
     border-color: #e74c3c !important; /* Rojo */
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
-    animation: shake 0.3s ease-in-out;
+}
+
+.mensaje-error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.form-group.error .mensaje-error {
+    display: block;
 }
 
 /* Animaciones para el formulario */
@@ -80,8 +94,7 @@
     75% { transform: translateX(5px); }
 }
 
-.form-group input:invalid:not(:focus):not(:placeholder-shown),
-.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+.incorrecto {
     animation: shake 0.3s ease-in-out;
 }
 
@@ -90,5 +103,8 @@
     #formulario-contacto {
         padding: 1.5rem;
     }
-
+    
+    .contacto {
+        padding: 3rem 0;
+    }
 }
